@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { SideNav, TableOfContents, TopNav } from '../components';
+import { Heading, SideNav, TableOfContents, TopNav } from '../components';
 import 'prismjs';
 // Import other Prism themes here
 import 'prismjs/components/prism-bash.min';
@@ -64,6 +64,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
         <SideNav />
         <main className="flex column">
         <div className="float-container">
+        <div><Heading id='aq' level={3} className={""} >Abdullah</Heading></div>
 <div className="float-child">
   <div className="green"><Component {...pageProps} /></div>
 </div>
