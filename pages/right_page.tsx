@@ -33,13 +33,15 @@ import { Callout, NewCallOut } from "../components";
       {% callout title="RESPONSE" desc="abc" icon="note" %}
     
 {
-      "id": "cu_19YMK02eZvKYlo2CPhsoQ2Pa",
-      "object": "customer",
-      "customer": {
-        "id": "cu_19YMK02eZvKYlo2CPhsoQ2Pa",
-        "object": "customer"
-      }
-    }
+  "id": 10,
+  "username": "theUser",
+  "firstName": "John",
+  "lastName": "James",
+  "email": "john@email.com",
+  "password": "12345",
+  "phone": "12345",
+  "userStatus": 1
+}
     
       {% /callout %}
       `;

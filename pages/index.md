@@ -26,9 +26,12 @@ Only one user details can be updated at a time.
 ---
 
 ### **Parameters**
-
+  {% callOutCollaps%}
 #### Names
 There are multiple parameters which can be updated. They are as followed
 **username**, **firstname**, **lastname**, **email**, **password** and **phone**
+
+  {% /callOutCollaps %}
+
 
 ---
