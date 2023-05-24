@@ -11,7 +11,7 @@ export function Callout({ title, desc, children }) {
   const [domLoaded, setDomLoaded] = useState(false);
   const [ style, setStyle ] = useState({})
   useEffect(() => {
-    import('react-syntax-highlighter/dist/esm/styles/prism')
+    import('react-syntax-highlighter/dist/esm/styles/prism/dracula')
     .then(mod => setStyle(mod.default));
     setDomLoaded(true);
   })
@@ -41,7 +41,7 @@ export function Callout({ title, desc, children }) {
            padding: 12px 16px;
            background: #3c4257;
            color: white;
-           border-radius: 15px 15px 0px 0px;
+           border-radius: 8px 8px 0px 0px;
          }
          .callout :global(p) {
            margin: 0;
@@ -87,8 +87,8 @@ export function Callout({ title, desc, children }) {
            color: white;
            flex-direction: column;
            padding: 12px 16px;
-           background: #4f566b;
-           border-radius: 0px 0px 15px 15px;
+           background: #282a36;
+           border-radius: 0px 0px 8px 8px;
          }
          .callout :global(p) {
            margin: 0;
