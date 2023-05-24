@@ -12,26 +12,27 @@ Some useful links:
 
 
 
-#### PUT
+#### PUT 
 ##### Summary:
 Update user
 ---
-##### Description:
+  {% callOutCollaps%}
 PUT is a request method supported by HTTP used by the World Wide Web. The PUT method requests that the enclosed entity be stored under the supplied URI. If the URI refers to an already existing resource, it is modified and if the URI does not point to an existing resource, then the server can create the resource with that URI. 
 
 This can only be done by the logged in user.
+ {% /callOutCollaps %}
  ---
 ##### Limit:
 Only one user details can be updated at a time.
 ---
 
 ### **Parameters**
-  {% callOutCollaps%}
-#### Names
+
+
 There are multiple parameters which can be updated. They are as followed
 **username**, **firstname**, **lastname**, **email**, **password** and **phone**
 
-  {% /callOutCollaps %}
+ 
 
 
 ---

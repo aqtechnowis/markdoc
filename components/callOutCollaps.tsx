@@ -25,10 +25,10 @@ export function CallOutCollaps({ title, children }) {
      <div>
       
     
-<details><summary></summary>
+<details open><summary className="collapsContent">Description</summary>
 <p>
 
-<span id="">{children}</span>
+<span >{children}</span>
 
 </p>
 </details>
@@ -44,14 +44,20 @@ export function CallOutCollaps({ title, children }) {
            color: balck;
            align-items:center;
            flex-direction: row;
-           padding: 12px 16px;
+           padding: 0px 16px;
            background: #ffffff;
            border-radius: 0px 0px 15px 15px;
+           padding: 0px;
          }
          .callOutCollaps :global(p) {
            margin: 0;
          }
-         
+         .collapsContent {
+          padding: 10px 0px;
+          font-weight:700;
+
+        }
+        
 
        `}
      </style>
