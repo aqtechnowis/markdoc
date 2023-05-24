@@ -11,7 +11,7 @@ export function NewCallOut({ title, desc, children }) {
   const [domLoaded, setDomLoaded] = useState(false);
   const [ style, setStyle ] = useState({})
   useEffect(() => {
-    import('react-syntax-highlighter/dist/esm/styles/prism/coy')
+    import('react-syntax-highlighter/dist/esm/styles/prism/material-light')
     .then(mod => setStyle(mod.default));
     setDomLoaded(true);
   })
@@ -52,7 +52,7 @@ export function NewCallOut({ title, desc, children }) {
 
    <div className="newCallOut">
      <div><SyntaxHighlighter
-             language="json"
+             language="swift"
              style={style}
              wrapLongLines
              customStyle={{
@@ -79,7 +79,7 @@ export function NewCallOut({ title, desc, children }) {
            color: white;
            flex-direction: column;
            padding: 12px 16px;
-           background: #f5f7ff;
+           background: #fafafa;
            border-radius: 0px 0px 15px 15px;
          }
          .newCallOut :global(p) {

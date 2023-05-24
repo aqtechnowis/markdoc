@@ -8,6 +8,7 @@
   "dependencies": {
     "@markdoc/markdoc": "latest",
     "@markdoc/next.js": "latest",
+    "json2md": "^2.0.0",
     "next": "latest",
     "prismjs": "latest",
     "react": "latest",

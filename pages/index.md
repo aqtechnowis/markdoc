@@ -10,29 +10,40 @@ Some useful links:
 - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
 - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
 
+#
 
-
+### Request Type
 #### PUT 
-##### Summary:
+##
+### Summary:
 Update user
 ---
-  {% callOutCollaps%}
+### **Description**
 PUT is a request method supported by HTTP used by the World Wide Web. The PUT method requests that the enclosed entity be stored under the supplied URI. If the URI refers to an already existing resource, it is modified and if the URI does not point to an existing resource, then the server can create the resource with that URI. 
 
 This can only be done by the logged in user.
- {% /callOutCollaps %}
+ 
  ---
-##### Limit:
+### Limit:
 Only one user details can be updated at a time.
 ---
 
-### **Parameters**
 
 
+  {% callOutCollaps%}
 There are multiple parameters which can be updated. They are as followed
 **username**, **firstname**, **lastname**, **email**, **password** and **phone**
 
- 
-
-
+#####
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| username | path | name that need to be deleted | Yes | string |
+ {% /callOutCollaps %}
+---
+#
+#### Responses
+​
+| Code | Description |
+| ---- | ----------- |
+| default | successful operation |
 ---

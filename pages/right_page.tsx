@@ -34,7 +34,7 @@ import { Callout, NewCallOut } from "../components";
     
 {
   "id": 10,
-  "username": "theUser",
+  "username": "theUsername",
   "firstName": "John",
   "lastName": "James",
   "email": "john@email.com",
@@ -51,17 +51,17 @@ import { Callout, NewCallOut } from "../components";
     
     
  curl -X 'PUT' \
-  'https://petstore.swagger.io/v2/user/talha866' \
+  'https://petstore.swagger.io/v2/user/theUsername' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "id":122231,
-  "username": "talha866",
-  "firstName": "Talha",
-  "lastName": "Khan",
-  "email": "talha@technowis.co",
-  "password": "Test@123456",
-  "phone": "+923356567889",
+  "id":10,
+  "username": "theUsername",
+  "firstName": "John",
+  "lastName": "James",
+  "email": "john@email.com",
+  "password": "12345",
+  "phone": "12345",
   "userStatus": 1
 }'
     
