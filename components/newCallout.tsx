@@ -11,7 +11,7 @@ export function NewCallOut({ title, desc, children }) {
   const [domLoaded, setDomLoaded] = useState(false);
   const [ style, setStyle ] = useState({})
   useEffect(() => {
-    import('react-syntax-highlighter/dist/esm/styles/prism/base16-ateliersulphurpool.light')
+    import('react-syntax-highlighter/dist/esm/styles/prism/coy')
     .then(mod => setStyle(mod.default));
     setDomLoaded(true);
   })
@@ -67,18 +67,10 @@ export function NewCallOut({ title, desc, children }) {
                  },
              }}>
            {/* { JSON.stringify(children, censor(children[0].props.children))} */}
-           { util.inspect(children.props.children)},
+          { util.inspect(JSON.parse(children.props.children.toString().replaceAll([", ,"], '')))},
          </SyntaxHighlighter></div>
    
-{/* 
-     <SyntaxHighlighter language="javascript" showInlineLineNumbers = {true} showLineNumbers = {true} >
-       { JSON.stringify(children, censor(children))},
-       
-       
-     </SyntaxHighlighter> */}
-     {/* <SyntaxHighlighter language="javascript" style={docco}>
-   {children}
- </SyntaxHighlighter> */}
+
 
      <style jsx>
        {`

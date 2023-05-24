@@ -10,85 +10,25 @@ Some useful links:
 - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
 - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
 
-## Version: 1.0.11
 
-### Terms of service
-http://swagger.io/terms/
-
-**Contact information:**  
-apiteam@swagger.io  
-
-**License:** [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
-
-[Find out more about Swagger](http://swagger.io)
-### /user/{username}
 
 #### PUT
 ##### Summary:
-
 Update user
-
+---
 ##### Description:
+PUT is a request method supported by HTTP used by the World Wide Web. The PUT method requests that the enclosed entity be stored under the supplied URI. If the URI refers to an already existing resource, it is modified and if the URI does not point to an existing resource, then the server can create the resource with that URI. 
 
 This can only be done by the logged in user.
-
-##### Parameters
-
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| username | path | name that need to be deleted | Yes | string |
-
-##### Responses
-{% table %}
-* Column 1 {% align="center" %}
-* Column 2
-* Column 3 {% align="right" %}
----
-* foo
-* bar
-* baz
----
-* foo
-* bar {% align="right" %}
-* baz
----
-* foo {% align="center" %}
-* bar
-* baz
-{% /table %}
-
-| Code | Description |
-| ---- | ----------- |
-| default | successful operation |
-
-
-
-
-
-
-
-
-
-
-
-
-{% table %}
-
+ ---
+##### Limit:
+Only one user details can be updated at a time.
 ---
 
+### **Parameters**
 
+#### Names
+There are multiple parameters which can be updated. They are as followed
+**username**, **firstname**, **lastname**, **email**, **password** and **phone**
 
-
-
-* Row 1 Cell 1
-
-
-
-
-
-
-    
-* Row 1 Cell 2
 ---
-
-{% /table %}

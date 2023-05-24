@@ -20,16 +20,19 @@ import { Callout, NewCallOut } from "../components";
   
   
 
+  let content="abs";
 
 
   const Page = (isResponse) => {
     let doc="";
+   
+  
     console.log(isResponse.isResponse)
     if(isResponse.isResponse){
       doc = `
       {% callout title="RESPONSE" desc="abc" icon="note" %}
     
-    
+{
       "id": "cu_19YMK02eZvKYlo2CPhsoQ2Pa",
       "object": "customer",
       "customer": {
@@ -42,16 +45,23 @@ import { Callout, NewCallOut } from "../components";
       `;
     }else{
       doc = `
-      {% callout title="CHARGED WITH EXPANDED CUSTOMER" desc="abc" icon="note" %}
+      {% callout title="RESPONSE" desc="abc" icon="note" %}
     
     
-      "id": "cu_19YMK02eZvKYlo2CPhsoQ2Pa",
-      "object": "customer",
-      "customer": {
-        "id": "cu_19YMK02eZvKYlo2CPhsoQ2Pa",
-        "object": "customer"
-      }
-    }
+ curl -X 'PUT' \
+  'https://petstore.swagger.io/v2/user/talha866' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "id":122231,
+  "username": "talha866",
+  "firstName": "Talha",
+  "lastName": "Khan",
+  "email": "talha@technowis.co",
+  "password": "Test@123456",
+  "phone": "+923356567889",
+  "userStatus": 1
+}'
     
       {% /callout %}
       `;

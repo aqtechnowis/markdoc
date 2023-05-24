@@ -67,7 +67,7 @@ export function Callout({ title, desc, children }) {
                  },
              }}>
            {/* { JSON.stringify(children, censor(children[0].props.children))} */}
-           { util.inspect(children.props.children)},
+           { util.inspect(children.props.children.toString().replaceAll([", ,"], ''))},
          </SyntaxHighlighter></div>
    
 {/* 
