@@ -84,7 +84,10 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
 </div>
 
 <div className="float-child">
-  <div className="blue"><Page></Page></div>
+  <div className="blue"><Page isResponse = {false}></Page></div>
+</div>
+<div className="float-child">
+  <div className="blue"><Page isResponse = {true}></Page></div>
 </div>
 
 
@@ -116,7 +119,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
         .float-child {
             width: 50%;
             float: left;
-            padding: 20px;
+            padding: 10px 10px 15px 20px;
             border: 0px solid red;
         }
         `}
