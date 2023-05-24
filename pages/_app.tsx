@@ -119,7 +119,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
         .float-child {
             width: 50%;
             float: left;
-            padding: 10px 10px 15px 20px;
+            padding: 10px 40px 10px 40px;
             border: 0px solid red;
         }
         `}
