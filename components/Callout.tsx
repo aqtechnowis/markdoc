@@ -15,21 +15,35 @@ export function Callout({ title, desc, children }) {
     .then(mod => setStyle(mod.default));
     setDomLoaded(true);
   })
-  
+  let doc =`curl -X 'PUT' \
+  'https://petstore.swagger.io/v2/pet' \  
+  -H 'accept: application/json' \ 
+  -H 'Content-Type: application/json' \ 
+  -d '{
+  "id": 0,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}'`
 
   return (
    domLoaded?(    <div className="callout">
    <div className="callout">
-     <AiFillEdit
-       size={20}
-       style={{
-         marginRight: "2px",
-         top: "20px",
-         right: "20px",
-       }}
-     >
-       {" "}
-     </AiFillEdit>
+
+
+
      {/* <strong>{title}</strong> */}
      <span>{title}</span>
 
@@ -67,7 +81,8 @@ export function Callout({ title, desc, children }) {
                  },
              }}>
            {/* { JSON.stringify(children, censor(children[0].props.children))} */}
-           { util.inspect(children.props.children.toString().replaceAll([", ,"], ''))},
+           {/* { util.inspect(children.props.children.toString().replaceAll([", ,"], ''))}, */}
+           {doc}
          </SyntaxHighlighter></div>
    
 {/* 

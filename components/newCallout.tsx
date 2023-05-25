@@ -11,11 +11,19 @@ export function NewCallOut({ title, desc, children }) {
   const [domLoaded, setDomLoaded] = useState(false);
   const [ style, setStyle ] = useState({})
   useEffect(() => {
-    import('react-syntax-highlighter/dist/esm/styles/prism/material-light')
+    import('react-syntax-highlighter/dist/esm/styles/prism/one-light')
     .then(mod => setStyle(mod.default));
     setDomLoaded(true);
   })
-  
+  let doc = `{ "id": 10,
+  "username": 'theUsername',
+  "firstName": 'John',
+  "lastName": 'James',
+  "email": 'john@email.com',
+  "password": '12345',
+  "phone": '12345',
+  "status":true,
+  "userStatus": 1 }`
 
   return (
    domLoaded?(    <div className="newCallOut">
@@ -52,7 +60,7 @@ export function NewCallOut({ title, desc, children }) {
 
    <div className="newCallOut">
      <div><SyntaxHighlighter
-             language="swift"
+             language="autohotkey"
              style={style}
              wrapLongLines
              customStyle={{
@@ -66,8 +74,10 @@ export function NewCallOut({ title, desc, children }) {
                      color: "#4f566b",
                  },
              }}>
+              {doc}
            {/* { JSON.stringify(children, censor(children[0].props.children))} */}
-          { util.inspect(JSON.parse(children.props.children.toString().replaceAll([", ,"], '')))},
+          {/* { util.inspect(JSON.parse(children.props.children.toString().replaceAll([", ,"], '')))}, */}
+          
          </SyntaxHighlighter></div>
    
 
