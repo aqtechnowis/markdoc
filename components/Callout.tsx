@@ -4,15 +4,18 @@ import { AiFillEdit } from "react-icons/ai";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { useEffect, useState } from 'react';
 import { inspect } from 'util' // or directly
+import svgs from '../assets/clipboard-solid.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 // or 
 var util = require('util')
 export function Callout({ title, desc, children }) {
 
   const [domLoaded, setDomLoaded] = useState(false);
-  const [ style, setStyle ] = useState({})
+  const [style, setStyle] = useState({})
   useEffect(() => {
     import('react-syntax-highlighter/dist/esm/styles/prism/dracula')
-    .then(mod => setStyle(mod.default));
+      .then(mod => setStyle(mod.default));
     setDomLoaded(true);
   })
   let doc =`curl -X 'PUT' \
@@ -43,12 +46,38 @@ export function Callout({ title, desc, children }) {
    <div className="callout">
 
 
+        {/* <strong>{title}</strong> */}
+        <div className="containerHeader">
+          <div className="titleWrapper">
+            <span className="titleColor">{title}</span>
+            <span className="titleDescription">{desc}</span>
+          </div>
+          <div className="iconsWrapper">
+            <ul>
+              <li>
+                <select title="asd" name="select" id="select">
+                  <option value="Node">Node</option>
+                  <option value="JS">JS</option>
+                  <option value="Java">Java</option>
+                  <option value="Curl">Curl</option>
+                </select>
+              </li>
+              <li>
+                <a href="#">
+                  <Image src={svgs} alt="" width={15}></Image>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <Image src={svgs} alt="" width={15}></Image>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-     {/* <strong>{title}</strong> */}
-     <span>{title}</span>
-
-     <style jsx>
-       {`
+        <style jsx>
+          {`
          .callout {
            display: flex;
            flex-direction: row;
@@ -61,8 +90,8 @@ export function Callout({ title, desc, children }) {
            margin: 0;
          }
        `}
-     </style>
-   </div>
+        </style>
+      </div>
 
    <div className="callout">
      <div><SyntaxHighlighter
@@ -91,12 +120,12 @@ export function Callout({ title, desc, children }) {
        
        
      </SyntaxHighlighter> */}
-     {/* <SyntaxHighlighter language="javascript" style={docco}>
+        {/* <SyntaxHighlighter language="javascript" style={docco}>
    {children}
  </SyntaxHighlighter> */}
 
-     <style jsx>
-       {`
+        <style jsx>
+          {`
          .callout {
            display: flex;
            color: white;
@@ -109,25 +138,25 @@ export function Callout({ title, desc, children }) {
            margin: 0;
          }
        `}
-     </style>
-   </div>
- </div>) : <div></div>
+        </style>
+      </div>
+    </div>) : <div></div>
 
   );
 
   function censor(censor) {
     var i = 0;
-    
-    return function(key, value) {
-      if(i !== 0 && typeof(censor) === 'object' && typeof(value) == 'object' && censor == value) 
-        return '[Circular]'; 
-      
-      if(i >= 29) // seems to be a harded maximum of 30 serialized objects?
+
+    return function (key, value) {
+      if (i !== 0 && typeof (censor) === 'object' && typeof (value) == 'object' && censor == value)
+        return '[Circular]';
+
+      if (i >= 29) // seems to be a harded maximum of 30 serialized objects?
         return '[Unknown]';
-      
+
       ++i; // so we know we aren't using the original object anymore
-      
-      return value;  
+
+      return value;
     }
   }
 }

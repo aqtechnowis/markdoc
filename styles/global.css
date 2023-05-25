@@ -20,3 +20,66 @@ main {
     padding: 20px;
     border: 0px solid red;
 }
+
+/* new styles */
+.containerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.containerHeader ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.containerHeader li:nth-child(even) {
+    border: 1px solid #ffffff45;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0px 14px;
+    color: #fff;
+}
+
+.containerHeader select {
+    padding: 3px 20px;
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none !important;
+}
+
+.titleColor {
+    color: #58c9ebcc;
+    font-size: 14px;
+}
+
+.titleDescription {
+    color: #fafafa7d;
+    display: inline-block;
+    margin: 0 0px 0px 5px;
+    font-size: 14opx;
+}
+
+
+
+
+pre::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px red;
+    background-color: #fff;
+}
+
+pre::-webkit-scrollbar {
+    height: 0px;
+    background-color: #fff;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: red;
+}

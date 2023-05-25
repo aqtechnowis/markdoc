@@ -15,6 +15,7 @@ import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 import Page from './right_page';
 import RightPage from './right_page';
+import "../styles/global.css";
 
 const TITLE = 'Markdoc';
 const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework';

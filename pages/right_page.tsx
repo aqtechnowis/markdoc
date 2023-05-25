@@ -47,7 +47,7 @@ import { Callout, NewCallOut } from "../components";
       `;
     }else{
       doc = `
-      {% callout title="CURL" desc="abc" icon="note" %}
+      {% callout title="PUT " desc="/v2/user/theUsername" icon="note" %}
     
     
  curl -X 'PUT' \

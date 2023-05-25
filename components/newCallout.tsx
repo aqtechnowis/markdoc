@@ -28,16 +28,7 @@ export function NewCallOut({ title, desc, children }) {
   return (
    domLoaded?(    <div className="newCallOut">
    <div className="newCallOut">
-     <AiFillEdit
-       size={20}
-       style={{
-         marginRight: "2px",
-         top: "20px",
-         right: "20px",
-       }}
-     >
-       {" "}
-     </AiFillEdit>
+     
      {/* <strong>{title}</strong> */}
      <span>{title}</span>
 
