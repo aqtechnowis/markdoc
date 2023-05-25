@@ -4,7 +4,7 @@ import { AiFillEdit } from "react-icons/ai";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { useEffect, useState } from 'react';
 import { inspect } from 'util' // or directly
-import svgs from '../assets/clipboard-solid.png';
+import svgs from '../assets/1.svg';
 import Image from "next/image";
 // or 
 var util = require('util')
@@ -58,8 +58,8 @@ function handleChange  (event)  {
   setsOption(event.target.value.toString())
   }
   return (
-   domLoaded?(    <div className="callout">
-   <div className="callout">
+    domLoaded ? (<div className="callout">
+      <div className="callout">
 
 
         {/* <strong>{title}</strong> */}
@@ -77,8 +77,9 @@ function handleChange  (event)  {
                 </select>
               </li>
               <li>
+                {/* icon color #a4cdfe */}
                 <a href="#">
-                  <Image src={svgs} alt="" width={15}></Image>
+                  <Image src={svgs} alt="" width={15} color="#a4cdfe"></Image>
                 </a>
               </li>
               <li>
@@ -107,28 +108,28 @@ function handleChange  (event)  {
         </style>
       </div>
 
-   <div className="callout">
-     <div><SyntaxHighlighter
-             language="javascript"
-             style={style}
-             wrapLongLines
-             customStyle={{
-                //  backgroundColor: "#4f566b",
-                 opacity: "1",
-                 
-                 // marginTop: "-2rem",
-             }}
-             codeTagProps={{
-                 style: {
-                     color: "#4f566b",
-                 },
-             }}>
-           {/* { JSON.stringify(children, censor(children[0].props.children))} */}
-           {/* { util.inspect(children.props.children.toString().replaceAll([", ,"], ''))}, */}
-           {doc}
-         </SyntaxHighlighter></div>
-   
-{/* 
+      <div className="callout">
+        <div><SyntaxHighlighter
+          language="javascript"
+          style={style}
+          wrapLongLines
+          customStyle={{
+            //  backgroundColor: "#4f566b",
+            opacity: "1",
+
+            // marginTop: "-2rem",
+          }}
+          codeTagProps={{
+            style: {
+              color: "#4f566b",
+            },
+          }}>
+          {/* { JSON.stringify(children, censor(children[0].props.children))} */}
+          {/* { util.inspect(children.props.children.toString().replaceAll([", ,"], ''))}, */}
+          {doc}
+        </SyntaxHighlighter></div>
+
+        {/* 
      <SyntaxHighlighter language="javascript" showInlineLineNumbers = {true} showLineNumbers = {true} >
        { JSON.stringify(children, censor(children))},
        

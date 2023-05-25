@@ -69,9 +69,6 @@ main {
     font-size: 14opx;
 }
 
-
-
-
 pre::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 2px red;
     background-color: #fff;
@@ -84,4 +81,9 @@ pre::-webkit-scrollbar {
 
 pre::-webkit-scrollbar-thumb {
     background-color: red;
+}
+
+.containerHeader img{
+    /* filter: invert(1); */
+    cursor: pointer;
 }
