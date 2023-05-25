@@ -47,18 +47,22 @@ main {
 }
 .containerHeader select option {
     background: #3c4257;
+    text-align: right;
 }
 .containerHeader select {
-    padding: 3px 5px;
+padding: 3px 5px;
     background: none;
     color: #fff;
     border: none;
     cursor: pointer;
     outline: none !important;
+    appearance: none;
+    -webkit-appearance: none;
+    min-width: 60px;
 }
 
 .titleColor {
-    color: #58c9ebcc;
+    color: #9ebdea;
     font-size: 14px;
 }
 
@@ -86,4 +90,10 @@ pre::-webkit-scrollbar-thumb {
 .containerHeader img{
     /* filter: invert(1); */
     cursor: pointer;
+}
+
+.containerHeader li:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

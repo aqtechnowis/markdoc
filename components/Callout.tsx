@@ -7,6 +7,7 @@ import { inspect } from 'util' // or directly
 import svgs from '../assets/1.svg';
 import externalLinkIcon from '../assets/icon-external-link.svg'
 import Image from "next/image";
+import dropdownIcon from "../assets/2.svg"
 // or 
 var util = require('util')
 export function Callout({ title, desc, children }) {
@@ -75,7 +76,7 @@ function handleChange  (event)  {
                 <select title="asd" name="select" id="select" onChange={handleChange} >
                   <option value="Curl">Curl</option>
                   <option value="Java">Java</option>
-                </select>
+                </select><Image src={dropdownIcon} alt="" width={15}></Image>
               </li>
               <li>
                 {/* icon color #a4cdfe */}
