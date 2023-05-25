@@ -5,6 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { useEffect, useState } from 'react';
 import { inspect } from 'util' // or directly
 import svgs from '../assets/1.svg';
+import externalLinkIcon from '../assets/icon-external-link.svg'
 import Image from "next/image";
 // or 
 var util = require('util')
@@ -79,7 +80,7 @@ function handleChange  (event)  {
               <li>
                 {/* icon color #a4cdfe */}
                 <a href="#">
-                  <Image src={svgs} alt="" width={15} color="#a4cdfe"></Image>
+                  <Image src={externalLinkIcon} alt="" width={15}></Image>
                 </a>
               </li>
               <li>
