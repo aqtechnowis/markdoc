@@ -5,7 +5,6 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { useEffect, useState } from 'react';
 import { inspect } from 'util' // or directly
 import svgs from '../assets/clipboard-solid.png';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 // or 
 var util = require('util')
@@ -13,11 +12,14 @@ export function Callout({ title, desc, children }) {
 
   const [domLoaded, setDomLoaded] = useState(false);
   const [style, setStyle] = useState({})
+  const [sOption, setsOption] = useState({})
   useEffect(() => {
     import('react-syntax-highlighter/dist/esm/styles/prism/dracula')
       .then(mod => setStyle(mod.default));
     setDomLoaded(true);
+    // setsOption('Node')
   })
+  
   let doc =`curl -X 'PUT' \
   'https://petstore.swagger.io/v2/pet' \  
   -H 'accept: application/json' \ 
@@ -40,7 +42,21 @@ export function Callout({ title, desc, children }) {
   ],
   "status": "available"
 }'`
+console.log(sOption.toString());
+if(sOption=="Java"){
+doc= `Stripe.apiKey = "sk_test_4eC39HqLyjWDarjtT1zdp7dc";
 
+Map<String, String> metadataParams = new HashMap<>();
+metadataParams.put("order_id", "6735");
+
+Map<String, Object> params = new HashMap<>();
+params.put("metadata", metadataParams);
+
+Customer customer = Customer.create(params);`
+}
+function handleChange  (event)  {
+  setsOption(event.target.value.toString())
+  }
   return (
    domLoaded?(    <div className="callout">
    <div className="callout">
@@ -55,11 +71,9 @@ export function Callout({ title, desc, children }) {
           <div className="iconsWrapper">
             <ul>
               <li>
-                <select title="asd" name="select" id="select">
-                  <option value="Node">Node</option>
-                  <option value="JS">JS</option>
-                  <option value="Java">Java</option>
+                <select title="asd" name="select" id="select" onChange={handleChange} >
                   <option value="Curl">Curl</option>
+                  <option value="Java">Java</option>
                 </select>
               </li>
               <li>

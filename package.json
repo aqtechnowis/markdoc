@@ -6,7 +6,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "@markdoc/markdoc": "latest",
     "@markdoc/next.js": "latest",
     "json2md": "^2.0.0",

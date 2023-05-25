@@ -45,9 +45,11 @@ main {
     padding: 0px 14px;
     color: #fff;
 }
-
+.containerHeader select option {
+    background: #3c4257;
+}
 .containerHeader select {
-    padding: 3px 20px;
+    padding: 3px 5px;
     background: none;
     color: #fff;
     border: none;
