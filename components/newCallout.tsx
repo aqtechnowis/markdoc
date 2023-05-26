@@ -11,25 +11,24 @@ export function NewCallOut({ title, desc, children }) {
   const [domLoaded, setDomLoaded] = useState(false);
   const [ style, setStyle ] = useState({})
   useEffect(() => {
-    import('react-syntax-highlighter/dist/esm/styles/prism')
+    import('react-syntax-highlighter/dist/esm/styles/prism/one-light')
     .then(mod => setStyle(mod.default));
     setDomLoaded(true);
   })
-  
+  let doc = `{ "id": 10,
+  "username": 'theUsername',
+  "firstName": 'John',
+  "lastName": 'James',
+  "email": 'john@email.com',
+  "password": '12345',
+  "phone": '12345',
+  "status":true,
+  "userStatus": 1 }`
 
   return (
    domLoaded?(    <div className="newCallOut">
    <div className="newCallOut">
-     <AiFillEdit
-       size={20}
-       style={{
-         marginRight: "2px",
-         top: "20px",
-         right: "20px",
-       }}
-     >
-       {" "}
-     </AiFillEdit>
+     
      {/* <strong>{title}</strong> */}
      <span>{title}</span>
 
@@ -39,8 +38,8 @@ export function NewCallOut({ title, desc, children }) {
            display: flex;
            flex-direction: row;
            padding: 12px 16px;
-           background: #3c4257;
-           color: white;
+           background: #e3e8ee;
+           color: #4f566b;
            border-radius: 15px 15px 0px 0px;
          }
          .newCallOut :global(p) {
@@ -52,7 +51,7 @@ export function NewCallOut({ title, desc, children }) {
 
    <div className="newCallOut">
      <div><SyntaxHighlighter
-             language="javascript"
+             language="autohotkey"
              style={style}
              wrapLongLines
              customStyle={{
@@ -66,19 +65,13 @@ export function NewCallOut({ title, desc, children }) {
                      color: "#4f566b",
                  },
              }}>
+              {doc}
            {/* { JSON.stringify(children, censor(children[0].props.children))} */}
-           { util.inspect(children)},
+          {/* { util.inspect(JSON.parse(children.props.children.toString().replaceAll([", ,"], '')))}, */}
+          
          </SyntaxHighlighter></div>
    
-{/* 
-     <SyntaxHighlighter language="javascript" showInlineLineNumbers = {true} showLineNumbers = {true} >
-       { JSON.stringify(children, censor(children))},
-       
-       
-     </SyntaxHighlighter> */}
-     {/* <SyntaxHighlighter language="javascript" style={docco}>
-   {children}
- </SyntaxHighlighter> */}
+
 
      <style jsx>
        {`
@@ -87,7 +80,7 @@ export function NewCallOut({ title, desc, children }) {
            color: white;
            flex-direction: column;
            padding: 12px 16px;
-           background: #4f566b;
+           background: #fafafa;
            border-radius: 0px 0px 15px 15px;
          }
          .newCallOut :global(p) {

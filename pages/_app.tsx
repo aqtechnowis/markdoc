@@ -1,16 +1,25 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Heading, SideNav, TableOfContents, TopNav } from '../components';
+
+import { Callout, Heading, SideNav, TableOfContents, TopNav } from '../components';
+
 import 'prismjs';
 // Import other Prism themes here
 import 'prismjs/components/prism-bash.min';
 import 'prismjs/themes/prism.css';
+
 import '../public/globals.css'
+
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
+import Page from './right_page';
+import RightPage from './right_page';
+import "../styles/global.css";
+
 const TITLE = 'Markdoc';
 const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework';
+
 function collectHeadings(node, sections = []) {
   if (node) {
     if (node.name === 'Heading') {
@@ -28,24 +37,27 @@ function collectHeadings(node, sections = []) {
       }
     }
   }
+
   return sections;
 }
+
 export type MyAppProps = MarkdocNextJsPageProps
+
 export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
-  const { markdoc } = pageProps;
+
+
   let title = TITLE;
   let description = DESCRIPTION;
-  if (markdoc) {
-    if (markdoc.frontmatter.title) {
-      title = markdoc.frontmatter.title;
-    }
-    if (markdoc.frontmatter.description) {
-      description = markdoc.frontmatter.description;
-    }
-  }
+
+
   const toc = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
     : [];
+
+
+
+
+
   return (
     <>
       <Head>
@@ -54,8 +66,8 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
         <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title} />
         <meta name="description" content={description} />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <TopNav>
         <Link href="/docs">Docs</Link>
@@ -63,17 +75,30 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
       <div className="page">
         <SideNav />
         <main className="flex column">
-        <div className="float-container">
-        <div><Heading id='aq' level={3} className={""} >Abdullah</Heading></div>
-<div className="float-child">
-  <div className="green"><Component {...pageProps} /></div>
-</div>
-<div className="float-child">
-  <div className="blue"><Component {...pageProps} /></div>
-</div>
-</div>
+          <div className="float-container">
+
+
+            <div className="float-child">
+              <Link href="#markdoc">What is MarkDoc?</Link><br></br>
+              <div id="swagger"></div>
+              <div className="green"><Component {...pageProps} /></div>
+              <div id="markdoc"></div>
+              <Link href="#swagger">What is Swagger?</Link>
+
+           
+            </div>
+
+            <div className="float-child">
+              <div className="blue"><Page isResponse={false}></Page></div>
+            </div>
+            <div className="float-child">
+              <div className="blue"><Page isResponse={true}></Page></div>
+            </div>
+
+
+          </div>
         </main>
-      
+
       </div>
       <style jsx>
         {`
@@ -99,7 +124,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
         .float-child {
             width: 50%;
             float: left;
-            padding: 20px;
+            padding: 10px 40px 10px 40px;
             border: 0px solid red;
         }
         `}
