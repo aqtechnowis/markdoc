@@ -10,13 +10,14 @@ Some useful links:
 - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
 - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
 
-#
 
-### /user/{username}
 
-#### PUT
+### PUT
+#### /user/{username}
 
-##### Summary:
+
+
+### Summary:
 
 ​
 Update user
@@ -31,7 +32,7 @@ This can only be done by the logged in user.
 
 
 
-#### Parameters
+## Parameters
 
 | Name     | Located in | Description                  | Required | Schema |
 | -------- | ---------- | ---------------------------- | -------- | ------ |
@@ -41,7 +42,7 @@ This can only be done by the logged in user.
 
 
 
-#### Responses
+## Responses
 
 | Code    | Description          |
 | ------- | -------------------- |
