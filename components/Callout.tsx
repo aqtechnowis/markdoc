@@ -112,7 +112,7 @@ function handleChange  (event)  {
 
       <div className="callout">
         <div><SyntaxHighlighter
-          language="javascript"
+          language="js"
           style={style}
           wrapLongLines
           customStyle={{
