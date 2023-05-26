@@ -33,3 +33,16 @@ h2 {
 a {
   color: rgba(75, 85, 99, 1);
 }
+
+tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgreen;
+}
+
+table :is(td, th) {
+  border: 1px solid black;
+  padding: 0.3em;
+}

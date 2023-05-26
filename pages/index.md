@@ -45,3 +45,12 @@ There are multiple parameters which can be updated. They are as followed
 | ---- | ----------- |
 | default | successful operation |
 ---
+
+
+# Custom CSS in Markdown Example For Table
+
+| Col 1 | Col 2 | Col 3 |
+| ----- | ----- | ----- |
+| A     | B     | C     |
+| 1     | 2     | 3     |
+| A1    | B2    | C3    |

@@ -9,36 +9,36 @@ var util = require('util')
 export function CallOutCollaps({ title, children }) {
 
   const [domLoaded, setDomLoaded] = useState(false);
-  const [ style, setStyle ] = useState({})
+  const [style, setStyle] = useState({})
   useEffect(() => {
     import('react-syntax-highlighter/dist/esm/styles/prism/coy')
-    .then(mod => setStyle(mod.default));
+      .then(mod => setStyle(mod.default));
     setDomLoaded(true);
   })
-  
+
 
   return (
-   domLoaded?(    <div >
-   
+    domLoaded ? (<div >
 
-   <div className="callOutCollaps">
-     <div>
-      
-    
+
+      <div className="callOutCollaps">
+        <div>
+
+
           <details open><summary className="collapsContent">Description</summary>
-<p>
+            <p>
 
-<span >{children}</span>
+              <span >{children}</span>
 
-</p>
-</details>
-         
-         </div>
-   
+            </p>
+          </details>
+
+        </div>
 
 
-     <style jsx>
-       {`
+
+        <style jsx>
+          {`
          .callOutCollaps {
            display: flex;
            color: balck;
@@ -60,9 +60,9 @@ export function CallOutCollaps({ title, children }) {
         
 
        `}
-     </style>
-   </div>
- </div>) : <div></div>
+        </style>
+      </div>
+    </div>) : <div></div>
 
   );
 
