@@ -123,7 +123,7 @@ function handleChange  (event)  {
           }}
           codeTagProps={{
             style: {
-              color: "#4f566b",
+              color: "#F5FBFF",
             },
           }}>
           {/* { JSON.stringify(children, censor(children[0].props.children))} */}
