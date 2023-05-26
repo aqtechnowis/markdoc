@@ -49,3 +49,6 @@ td {
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
+hr {
+  border: 1px solid #e3e8ee;
+}

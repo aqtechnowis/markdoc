@@ -106,25 +106,25 @@ list-style-type: none;
 .des_style::before {
     content: '';
     display: block;
-    background-image: url(../assets/5.svg);
+    background-image: url(../assets/Dropdown-SVG-Icon-0sfe.svg);
     background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     position: absolute;
-    left: -25px;
+    left: -15px;
     top: 50%;
     transform: translateY(-50%);
-}
+} */
 
-.des_style::after {
+/* .des_style::after {
     content: '';
     display: block;
-    background-image: url(../assets/5.svg);
+    background-image: url(../assets/Dropdown-SVG-Icon-0sfe.svg);
     background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     position: absolute;
-    left: -25px;
+    left: -15px;
     top: 50%;
     transform: rotate(180deg);
 } */

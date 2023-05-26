@@ -23,16 +23,11 @@ export function CallOutCollaps({ title, children }) {
 
       <div className="callOutCollaps">
         <div>
-
-
           <details open><summary className="collapsContent des_style">Description</summary>
             <p>
-
               <span >{children}</span>
-
             </p>
           </details>
-
         </div>
 
 

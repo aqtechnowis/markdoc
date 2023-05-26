@@ -43,7 +43,7 @@ export function Callout({ title, desc, children }) {
     }
   ],
   "status": "available"
-}'`
+}`
 console.log(sOption.toString());
 if(sOption=="Java"){
 doc= `Stripe.apiKey = "sk_test_4eC39HqLyjWDarjtT1zdp7dc";

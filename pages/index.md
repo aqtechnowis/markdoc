@@ -29,7 +29,7 @@ PUT is a request method supported by HTTP used by the World Wide Web. The PUT me
 This can only be done by the logged in user.
 {% /callOutCollaps %}
 
----
+
 
 #### Parameters
 
@@ -39,7 +39,7 @@ This can only be done by the logged in user.
 
 #
 
----
+
 
 #### Responses
 
@@ -49,7 +49,7 @@ This can only be done by the logged in user.
 
 #
 
----
+
 
 ## What is Markdoc?
 
