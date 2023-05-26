@@ -3,7 +3,6 @@
 This is a sample Pet Store Server based on the OpenAPI 3.0 specification. You can find out more about
 Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
 
-
 _If you're looking for the Swagger 2.0/OAS 2.0 version of Petstore, then click [here](https://editor.swagger.io/?url=https://petstore.swagger.io/v2/swagger.yaml). Alternatively, you can load via the `Edit > Load Petstore OAS 2.0` menu option!_
 
 Some useful links:
@@ -14,10 +13,14 @@ Some useful links:
 #
 
 ### /user/{username}
+
 #### PUT
+
 ##### Summary:
+
 ​
 Update user
+
 ---
 
 {% callOutCollaps%}
@@ -28,19 +31,46 @@ This can only be done by the logged in user.
 
 ---
 
+#### Parameters
 
-#### Parameters 
-
-| Name | Located in | Description | Required | Schema |
-| ---- | ---------- | ----------- | -------- | ---- |
-| username | path | name that need to be deleted | Yes | string |
+| Name     | Located in | Description                  | Required | Schema |
+| -------- | ---------- | ---------------------------- | -------- | ------ |
+| username | path       | name that need to be deleted | Yes      | string |
 
 #
+
 ---
 
 #### Responses
-| Code | Description |
-| ---- | ----------- |
+
+| Code    | Description          |
+| ------- | -------------------- |
 | default | successful operation |
 
 #
+
+---
+
+## What is Markdoc?
+
+# {% $markdoc.frontmatter.title %} {% #overview %}
+
+Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites. Stripe created Markdoc to power [our public docs](http://stripe.com/docs).
+
+Markdoc is open-source—check out its [source](http://github.com/markdoc/markdoc) to see how it works.
+
+## How is Markdoc different?
+
+## Markdoc uses a fully declarative approach to composition and flow control, where other solutions… [Read more](/docs/overview).
+
+## Next steps
+
+- [Install Markdoc](/docs/getting-started)
+- [Explore the syntax](/docs/syntax)
+
+---
+
+## What is Swagger?
+### API Development for Everyone
+
+Simplify API development for users, teams, and enterprises with the Swagger open source and professional tool-set. Find out how Swagger can help you design and document your APIs at scale.

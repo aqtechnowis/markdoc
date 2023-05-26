@@ -46,7 +46,7 @@ function collectHeadings(node, sections = []) {
 export type MyAppProps = MarkdocNextJsPageProps
 
 export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
-  
+
 
   let title = TITLE;
   let description = DESCRIPTION;
@@ -59,7 +59,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
 
 
 
-    
+
   return (
     <>
       <Head>
@@ -77,24 +77,28 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
       <div className="page">
         <SideNav />
         <main className="flex column">
-        <div className="float-container">
+          <div className="float-container">
 
 
-<div className="float-child">
-  <div className="green"><Component {...pageProps} /></div>
-</div>
+            <div className="float-child">
+              <Link href="#markdoc">What is MarkDoc?</Link><br></br>
+              <Link href="#swagger">What is Swagger?</Link>
+              <div className="green"><Component {...pageProps} /></div>
+              <div id="markdoc"></div>
+              <div id="swagger"></div>
+            </div>
 
-<div className="float-child">
-  <div className="blue"><Page isResponse = {false}></Page></div>
-</div>
-<div className="float-child">
-  <div className="blue"><Page isResponse = {true}></Page></div>
-</div>
+            <div className="float-child">
+              <div className="blue"><Page isResponse={false}></Page></div>
+            </div>
+            <div className="float-child">
+              <div className="blue"><Page isResponse={true}></Page></div>
+            </div>
 
 
-</div>
+          </div>
         </main>
-      
+
       </div>
       <style jsx>
         {`
