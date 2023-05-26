@@ -82,10 +82,12 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
 
             <div className="float-child">
               <Link href="#markdoc">What is MarkDoc?</Link><br></br>
-              <Link href="#swagger">What is Swagger?</Link>
+              <div id="swagger"></div>
               <div className="green"><Component {...pageProps} /></div>
               <div id="markdoc"></div>
-              <div id="swagger"></div>
+              <Link href="#swagger">What is Swagger?</Link>
+
+           
             </div>
 
             <div className="float-child">
