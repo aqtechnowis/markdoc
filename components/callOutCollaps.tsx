@@ -25,7 +25,7 @@ export function CallOutCollaps({ title, children }) {
         <div>
 
 
-          <details open><summary className="collapsContent">Description</summary>
+          <details open><summary className="collapsContent des_style">Description</summary>
             <p>
 
               <span >{children}</span>

@@ -97,3 +97,34 @@ pre::-webkit-scrollbar-thumb {
     align-items: center;
     justify-content: center;
 }
+/* 
+.des_style{
+position: relative;
+list-style-type: none;
+}
+
+.des_style::before {
+    content: '';
+    display: block;
+    background-image: url(../assets/5.svg);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.des_style::after {
+    content: '';
+    display: block;
+    background-image: url(../assets/5.svg);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: rotate(180deg);
+} */
