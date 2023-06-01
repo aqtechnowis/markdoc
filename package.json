@@ -10,6 +10,7 @@
     "@markdoc/next.js": "latest",
     "json2md": "^2.0.0",
     "next": "latest",
+    "next-themes": "^0.2.1",
     "prismjs": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -22,6 +23,9 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/react-syntax-highlighter": "^15.5.6",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
     "typescript": "latest"
   }
 }

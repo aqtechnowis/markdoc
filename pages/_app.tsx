@@ -16,6 +16,7 @@ import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 import Page from './right_page';
 import RightPage from './right_page';
 import "../styles/global.css";
+import { ThemeProvider } from 'next-themes';
 
 const TITLE = 'Markdoc';
 const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework';
@@ -60,6 +61,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
 
   return (
     <>
+      <ThemeProvider attribute="class">
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -129,6 +131,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
         }
         `}
       </style>
+      </ThemeProvider>
     </>
   );
 }
