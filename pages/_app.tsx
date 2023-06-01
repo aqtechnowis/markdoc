@@ -1,33 +1,39 @@
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import React, { useEffect, useState } from "react";
+import Head from "next/head";
+import Link from "next/link";
 
-import { Callout, Heading, SideNav, TableOfContents, TopNav } from '../components';
+import {
+  Callout,
+  Heading,
+  SideNav,
+  TableOfContents,
+  TopNav,
+} from "../components";
 
-import 'prismjs';
+import "prismjs";
 // Import other Prism themes here
-import 'prismjs/components/prism-bash.min';
-import 'prismjs/themes/prism.css';
+import "prismjs/components/prism-bash.min";
+import "prismjs/themes/prism.css";
 
-import '../public/globals.css'
+import "../public/globals.css";
 
-import type { AppProps } from 'next/app'
-import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
-import Page from './right_page';
-import RightPage from './right_page';
+import type { AppProps } from "next/app";
+import type { MarkdocNextJsPageProps } from "@markdoc/next.js";
+import Page from "./right_page";
+import RightPage from "./right_page";
 import "../styles/global.css";
 
-const TITLE = 'Markdoc';
-const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework';
+const TITLE = "Markdoc";
+const DESCRIPTION = "A powerful, flexible, Markdown-based authoring framework";
 
 function collectHeadings(node, sections = []) {
   if (node) {
-    if (node.name === 'Heading') {
+    if (node.name === "Heading") {
       const title = node.children[0];
-      if (typeof title === 'string') {
+      if (typeof title === "string") {
         sections.push({
           ...node.attributes,
-          title
+          title,
         });
       }
     }
@@ -41,23 +47,19 @@ function collectHeadings(node, sections = []) {
   return sections;
 }
 
-export type MyAppProps = MarkdocNextJsPageProps
+export type MyAppProps = MarkdocNextJsPageProps;
 
 export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
-
-
   let title = TITLE;
   let description = DESCRIPTION;
-
-
+  let [hrefLoc, setHrefLoc] = useState("http://localhost:3000/");
   const toc = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)
     : [];
-
-
-
-
-
+  useEffect(() => {
+    console.log(window.location.href.toString());
+    setHrefLoc(window.location.href);
+  });
   return (
     <>
       <Head>
@@ -76,34 +78,41 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
         <SideNav />
         <main className="flex column">
           <div className="float-container">
-
-
             <div className="float-child">
-              <Link href="#markdoc">What is MarkDoc?</Link><br></br>
+              <Link href="#markdoc">What is MarkDoc?</Link>
+              <br></br>
               <div id="swagger"></div>
-              <div className="green"><Component {...pageProps} /></div>
+              <div className="green">
+                <Component {...pageProps} />
+              </div>
               <div id="markdoc"></div>
               <Link href="#swagger">What is Swagger?</Link>
-
-           
             </div>
-
-            <div className="float-child">
-              <div className="blue"><Page isResponse={false}></Page></div>
-            </div>
-            <div className="float-child">
-              <div className="blue"><Page isResponse={true}></Page></div>
-            </div>
-
-
+            {hrefLoc == "http://localhost:3000/" ? (
+              <div className="float-child">
+                <div className="blue">
+                  <Page isResponse={false}></Page>
+                </div>
+              </div>
+            ) : (
+              <></>
+            )}
+            {hrefLoc == "http://localhost:3000/" ? (
+              <div className="float-child">
+                <div className="blue">
+                  <Page isResponse={true}></Page>
+                </div>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         </main>
-
       </div>
       <style jsx>
         {`
           .page {
-            position: fixed; 
+            position: fixed;
             top: var(--top-nav-height);
             display: flex;
             width: 100vw;
@@ -119,14 +128,14 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
           .float-container {
             border: 3px solid #fff;
             padding: 20px;
-        }
-        
-        .float-child {
+          }
+
+          .float-child {
             width: 50%;
             float: left;
             padding: 10px 40px 10px 40px;
             border: 0px solid red;
-        }
+          }
         `}
       </style>
     </>

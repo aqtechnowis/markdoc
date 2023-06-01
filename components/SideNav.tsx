@@ -1,32 +1,148 @@
-import React from 'react';
-import {useRouter} from 'next/router';
-import Link from 'next/link';
-
-const items = [
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
+let data = [
   {
-    title: 'Get started',
-    links: [{href: '/docs', children: 'Overview'}],
+    heading: "Book",
+    collapsed: false,
+    data: [
+      {
+        title: "Book Title 1",
+        selected: true,
+        links: [
+          {
+            href: "/books/child1",
+            children: "Book Child 1",
+          },
+          {
+            href: "/books/child2",
+            children: "Book Child 2",
+          },
+        ],
+      },
+      {
+        title: "Book Title 2",
+        selected: false,
+
+        links: [
+          {
+            href: "/books/child1",
+            children: "Book Child 1",
+          },
+          {
+            href: "/books/child2",
+            children: "Book Child 2",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    heading: "Author",
+    collapsed: true,
+    data: [
+      {
+        title: "Author Title 1",
+        selected: false,
+        links: [
+          {
+            href: "/author/child1",
+            children: "Author Child 1",
+          },
+          {
+            href: "/author/child2",
+            children: "Author Child 2",
+          },
+        ],
+      },
+      {
+        title: "Author Title 2",
+        selected: false,
+        links: [
+          {
+            href: "/author/child1",
+            children: "Author Child 3",
+          },
+          {
+            href: "/author/child2",
+            children: "Author Child 4",
+          },
+        ],
+      },
+    ],
   },
 ];
 
 export function SideNav() {
   const router = useRouter();
+  let [items, setItems] = useState([]);
+
+  useEffect(() => {
+    setItems(data);
+    console.log("ss");
+  }, []);
 
   return (
     <nav className="sidenav">
-      {items.map((item) => (
-        <div key={item.title}>
-          <span>{item.title}</span>
-          <ul className="flex column">
-            {item.links.map((link) => {
-              const active = router.pathname === link.href;
-              return (
-                <li key={link.href} className={active ? 'active' : ''}>
-                  <Link {...link} />
-                </li>
-              );
-            })}
-          </ul>
+      {items.map((item, index) => (
+        <div key={item.heading}>
+          <span
+            onClick={(event) => {
+              console.log("index");
+
+              items[index].collapsed = !items[index].collapsed;
+              let data = items;
+              setItems((items) => [...data]);
+              // setItems(items);
+            }}
+          >
+            {item.heading}
+          </span>
+
+          {item.collapsed ? (
+            <></>
+          ) : (
+            item.data.map((data, child) => (
+              <div key={data.title}>
+                <h5
+                  onClick={(event) => {
+                    items[index].data[child].selected =
+                      !items[index].data[child].selected;
+                    for (const i of item.data) {
+                    }
+
+                    for (let i = 0; i < item.data.length; i++) {
+                      console.log(i + "sdasd");
+                      if (i != child) {
+                        items[index].data[i].selected = false;
+                      }
+                    }
+                    let data = items;
+                    setItems((items) => [...data]);
+                    // setItems(items);
+                  }}
+                >
+                  {data.title}
+                </h5>
+
+                <ul className="flex column">
+                  {items[index].data[child].selected ? (
+                    data.links.map((link) => {
+                      const active = router.pathname === link.href;
+                      return (
+                        <li key={link.href} className={active ? "active" : ""}>
+                          <Link {...link} />
+                        </li>
+                      );
+                    })
+                  ) : (
+                    <></>
+                  )}
+                </ul>
+              </div>
+            ))
+          )}
         </div>
       ))}
       <style jsx>

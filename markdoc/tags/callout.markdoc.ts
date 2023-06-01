@@ -1,6 +1,7 @@
+import { CallOutCollaps } from '../../callout/callOutCollaps';
+import { NewCallOut } from '../../callout/newCallout';
 import {Callout} from '../../components';
-import { CallOutCollaps } from '../../components/callOutCollaps';
-import { NewCallOut } from '../../components/newCallout';
+
 
 export const callout = {
   render: Callout,
@@ -10,8 +11,9 @@ export const callout = {
       type: String,
     },
     desc: {
-      type: String,
+      type: Object,
     },
+  
   },
 };
 
@@ -23,7 +25,7 @@ export const newCallOut = {
       type: String,
     },
     desc: {
-      type: String,
+      type: Object,
     },
   },
 };

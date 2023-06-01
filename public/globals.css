@@ -52,3 +52,9 @@ td {
 hr {
   border: 1px solid #e3e8ee;
 }
+.callout-custom{
+  border: 1px solid #e3e8ee;
+  align-items:end;
+  padding:100%;
+  margin-left: 100%;
+}
