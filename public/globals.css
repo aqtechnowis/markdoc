@@ -52,3 +52,22 @@ td {
 hr {
   border: 1px solid #e3e8ee;
 }
+
+.custom-class-name-here {
+  color: rgb(244, 109, 109);
+}
+
+.custom-class-name-here-here {
+  color: rgb(4, 0, 0);
+}
+
+p em{
+  color: #8792a2;
+  font-size: 12px;
+}
+
+p strong em{
+  color: #e56f4a;
+  font-weight: normal;
+  font-size: 10px;
+}

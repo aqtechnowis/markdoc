@@ -3,7 +3,7 @@
 This is a sample Pet Store Server based on the OpenAPI 3.0 specification. You can find out more about
 Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
 
-_If you're looking for the Swagger 2.0/OAS 2.0 version of Petstore, then click [here](https://editor.swagger.io/?url=https://petstore.swagger.io/v2/swagger.yaml). Alternatively, you can load via the `Edit > Load Petstore OAS 2.0` menu option!_
+If you're looking for the Swagger 2.0/OAS 2.0 version of Petstore, then click [here](https://editor.swagger.io/?url=https://petstore.swagger.io/v2/swagger.yaml). Alternatively, you can load via the `Edit > Load Petstore OAS 2.0` menu option!
 
 Some useful links:
 
@@ -13,6 +13,9 @@ Some useful links:
 
 
 ### PUT
+
+---
+
 #### /user/{username}
 
 
@@ -75,3 +78,67 @@ Markdoc uses a fully declarative approach to composition and flow control, where
 ### API Development for Everyone
 
 Simplify API development for users, teams, and enterprises with the Swagger open source and professional tool-set. Find out how Swagger can help you design and document your APIs at scale.
+
+
+
+
+# Create a New Book
+
+
+#### POST /v1/books
+
+This endpoint is designed to add a new book to the catalog, effectively expanding the scope of the store's offerings. When adding a book, the system creates associations with an author and a genre, as well as details like title, brief description, price, cover image, and an ISBN.
+
+
+&nbsp;
+
+## Parameters
+
+---
+
+**title** 
+ 
+This refers to the name of the book, and should ideally capture the essence of the book's content, intriguing potential readers.
+
+
+---
+
+**description**
+
+This is a summary of the book's content, providing potential buyers a glimpse into the story or information contained within.
+
+---
+
+**price**
+
+This is the cost at which the book is available for sale.
+
+---
+
+**cover_image_url** **_REQUIRED_**
+
+This is the URL where the cover image of the book is hosted.
+
+---
+
+**isbn**
+
+This is the unique identifier assigned to each edition of the book.
+
+---
+
+**author_id** _optional_
+
+This identifier connects the book to its author.
+
+---
+
+**Genre_id** _optional_
+
+This identifier allows the book to be categorized by its genre.
+
+&nbsp;
+
+## Returns
+
+After successfully creating a new book, the response will be a `Book` Object representing the book. This object will contain all the attributes of the book, including its unique ID, title, description, price, cover image URL, ISBN, author ID, and genre ID.
