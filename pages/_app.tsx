@@ -119,8 +119,8 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
             padding: 0 2rem 2rem;
           }
           .float-container {
-            border: 3px solid #fff;
-            padding: 20px;
+            // border: 3px solid #fff;
+            // padding: 20px;
         }
         
         .float-child {

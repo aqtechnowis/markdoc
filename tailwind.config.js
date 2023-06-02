@@ -13,8 +13,19 @@ module.exports = {
   ],
   theme: {
     extend: {
-
-      textWhite: '#ffff',
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        white: "#f7fafc",
+        purple: "#3f3cbb",
+        midnight: "#121063",
+        metal: "#565584",
+        tahiti: "#3ab7bf",
+        silver: "#c1c9d2",
+        "bubble-gum": "#ff77e9",
+        bermuda: "#78dcca",
+        blue: "#6c8eef",
+      },
     },
   },
   plugins: [],

@@ -2,19 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply dark:bg-gray-800 bg-white
-  }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @apply dark:text-white
-    }
-}
+
 
 :root {
   --top-nav-height: 51px;
@@ -96,4 +84,75 @@ p strong em{
   color: #e56f4a;
   font-weight: normal;
   font-size: 10px;
+}
+
+.callOutCollaps{
+  color: #000;
+}
+
+
+
+
+@layer base {
+  body {
+    @apply dark:bg-gray-800 bg-white
+  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply dark:text-white
+    }
+
+    p{
+      @apply dark:text-silver
+    }
+  a{
+      @apply dark:text-blue
+    }
+
+    th,
+td {
+ @apply dark:text-white font-normal
+}
+
+    th
+ {
+ @apply dark:text-white font-semibold
+}
+
+.callOutCollaps{
+ @apply dark:!bg-[#1f2937]
+
+}
+
+.callOutCollaps p{
+ @apply dark:text-white
+
+}
+.des_style{
+ @apply dark:text-white
+
+}
+
+.sidenav span{
+
+ @apply dark:text-white
+
+
+}
+.sidenav ul li a{
+
+ /* @apply dark:font-extrabold */
+}
+
+p strong em{
+  @apply dark:text-[#e56f4a]
+}
+p  em{
+  @apply dark:text-[#8792a2]
+}
+    
 }
