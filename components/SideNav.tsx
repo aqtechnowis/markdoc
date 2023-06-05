@@ -126,7 +126,7 @@ export function SideNav() {
                   {data.title}
                 </h5>
 
-                <ul className="flex column">
+                <ul className=" flex-column">
                   {items[index].data[child].selected ? (
                     data.links.map((link) => {
                       const active = router.pathname === link.href;
